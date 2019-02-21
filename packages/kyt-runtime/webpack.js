@@ -1,5 +1,5 @@
 const { ReactLoadablePlugin } = require('react-loadable/webpack');
-const WebpackAssetsManifest = require('webpack-assets-manifest');
+const ManifestPlugin = require('webpack-manifest-plugin');
 const { loadableAssetsFile, clientAssetsFile } = require('kyt-utils/paths')();
 
 exports.kytWebpackPlugins = function kytWebpackPlugins(options) {
@@ -13,10 +13,10 @@ exports.kytWebpackPlugins = function kytWebpackPlugins(options) {
     );
 
     plugins.push(
-      new WebpackAssetsManifest({
+      new ManifestPlugin({
         publicPath: options.publicPath,
-        output: clientAssetsFile,
-        writeToDisk: true,
+        fileName: clientAssetsFile,
+        writeToFileEmit: true,
       })
     );
   }
