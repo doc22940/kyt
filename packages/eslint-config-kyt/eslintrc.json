@@ -24,6 +24,7 @@
 
   "rules": {
     "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error"
     "no-lonely-if": 2,
     "no-nested-ternary": 2,
     "max-nested-callbacks": [2, { "max": 5 }],
